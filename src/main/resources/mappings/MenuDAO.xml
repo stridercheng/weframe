@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.xhengz.weframe.dao.MenuDAO">
+    <resultMap id="menuDTOMap" type="MenuDTO">
+        <id column="menu_id" property="menuId"/>
+        <result column="menu_name" property="menuName"/>
+        <result column="menu_type" property="menuType"/>
+        <result column="menu_link" property="menuLink"/>
+    </resultMap>
+    <select id="selectMenu" resultMap="menuDTOMap">
+      select menu_id, menu_name, menu_type, menu_link
+        from menu
+      order by menu_id
+    </select>
+</mapper>
